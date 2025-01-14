@@ -9,6 +9,7 @@ module.exports = {
         accent: "#FF89B0", // Interactive elements & borders
         dark: "#2D1517", // Footer background & text
         light: "#FFF0F5", // Main page background
+        nav: "#FFE4E8",
       },
     },
   },
