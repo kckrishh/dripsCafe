@@ -1,9 +1,78 @@
-<nav class="max-w-screen h-[4rem] flex justify-around items-center bg-nav">
-  <img src="logo.avif" alt="" srcset="" class="w-[4rem] rounded-full" />
-  <menu class="flex justify-between w-[70%] text-lg">
-    <a routerLink="/">Home</a>
-    <a routerLink="/">Menu</a>
-    <a routerLink="/">About Us</a>
-    <a routerLink="/">Contact Us</a>
+<nav
+  class="max-w-screen h-[4rem] bg-nav flex justify-between lg:justify-around items-center"
+>
+  <img
+    src="logo.avif"
+    alt=""
+    srcset=""
+    class="w-[4rem] rounded-full sm:ml-[1rem]"
+  />
+  <menu class="w-[60%] hidden md:flex justify-between text-xl lg:text-2xl">
+    <a routerLink="/" class="text-text-nav-default hover:text-text-nav-hover"
+      >Home</a
+    >
+    <a routerLink="/" class="text-text-nav-default hover:text-text-nav-hover"
+      >Menu</a
+    >
+    <a routerLink="/" class="text-text-nav-default hover:text-text-nav-hover"
+      >About Us</a
+    >
+    <a routerLink="/" class="text-text-nav-default hover:text-text-nav-hover"
+      >Contact Us</a
+    >
   </menu>
+  <div class="block md:hidden mr-[2rem]">
+    <div class="relative">
+      <!-- Hamburger Menu Button -->
+      <button
+        class="flex flex-col justify-between items-center w-6 h-6 z-50 relative"
+        (click)="isOpen = !isOpen"
+      >
+        <span
+          class="block w-full h-[1.8px] bg-black rounded transition-transform transform"
+          [class.rotate-45]="isOpen"
+          [class.translate-y-1.5]="isOpen"
+        ></span>
+        <span
+          class="block w-full h-[2px] bg-black rounded transition-opacity"
+          [class.opacity-0]="isOpen"
+        ></span>
+        <span
+          class="block w-full h-[2px] bg-black rounded transition-transform transform"
+          [class.-rotate-45]="isOpen"
+          [class.-translate-y-1.5]="isOpen"
+        ></span>
+      </button>
+
+      <!-- Sidebar Menu -->
+      <div
+        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300"
+        [class.translate-x-0]="isOpen"
+        [class.translate-x-full]="!isOpen"
+      >
+        <menu class="flex flex-col mt-[4rem] p-4 space-y-4">
+          <a
+            routerLink="/"
+            class="text-text-nav-default hover:text-text-nav-hover"
+            >Home</a
+          >
+          <a
+            routerLink="/menu"
+            class="text-text-nav-default hover:text-text-nav-hover"
+            >Menu</a
+          >
+          <a
+            routerLink="/about"
+            class="text-text-nav-default hover:text-text-nav-hover"
+            >About Us</a
+          >
+          <a
+            routerLink="/contact"
+            class="text-text-nav-default hover:text-text-nav-hover"
+            >Contact Us</a
+          >
+        </menu>
+      </div>
+    </div>
+  </div>
 </nav>
