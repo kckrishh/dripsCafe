@@ -11,9 +11,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MenuComponent } from './menu/menu.component';
+import { HeroComponent } from './home/hero/hero.component';
+import { FeaturedItemsComponent } from './home/featured-items/featured-items.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, MenuComponent],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    MenuComponent,
+    HeroComponent,
+    FeaturedItemsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

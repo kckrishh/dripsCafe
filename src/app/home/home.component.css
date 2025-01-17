@@ -1,0 +1,18 @@
+:host {
+  --scroll-speed: 0px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.relative {
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
+.absolute {
+  backface-visibility: hidden;
+}

@@ -1,0 +1,55 @@
+<div class="relative h-screen w-full overflow-hidden">
+  <!-- Background Image with Parallax Effect -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat overflow-hidden"
+    [ngStyle]="{
+      transform: 'translateY(' + offset * 0.5 + 'px)',
+      'background-image': 'url(hero.jpg)'
+    }"
+  ></div>
+
+  <!-- Gradient Overlay -->
+  <div
+    class="absolute inset-0"
+    [ngStyle]="{
+      background:
+        'linear-gradient(165deg, rgba(45, 21, 23, 0.7) 0%, rgba(45, 21, 23, 0.4) 100%)'
+    }"
+  ></div>
+
+  <!-- Content Container -->
+  <div
+    class="relative h-full flex flex-col items-center justify-center px-4 text-center"
+  >
+    <div
+      class="transform transition-transform duration-300"
+      [ngStyle]="{ transform: 'translateY(' + offset * 0.2 + 'px)' }"
+    >
+      <!-- Main Title -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">
+        Sweet Moments
+      </h1>
+
+      <!-- Subtitle -->
+      <h2
+        class="text-2xl md:text-3xl font-light mb-8 text-white/90 drop-shadow-md"
+      >
+        Where Every Sip Tells a Story
+      </h2>
+
+      <!-- Decorative Elements -->
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <div class="w-12 h-0.5 bg-white/70"></div>
+        <span class="text-2xl">☕</span>
+        <div class="w-12 h-0.5 bg-white/70"></div>
+      </div>
+
+      <!-- CTA Button -->
+      <button
+        class="bg-white/95 hover:bg-white text-primary hover:text-accent transition-all duration-300 px-8 py-3 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        Explore Our Menu
+      </button>
+    </div>
+  </div>
+</div>
