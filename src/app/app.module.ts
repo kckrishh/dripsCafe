@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HeroComponent } from './home/hero/hero.component';
 import { FeaturedItemsComponent } from './home/featured-items/featured-items.component';
 import { InvitationComponent } from './home/invitation/invitation.component';
+import { HomeMenuComponent } from './home/home-menu/home-menu.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { InvitationComponent } from './home/invitation/invitation.component';
     HeroComponent,
     FeaturedItemsComponent,
     InvitationComponent,
+    HomeMenuComponent,
   ],
   imports: [
     BrowserModule,
