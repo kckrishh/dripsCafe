@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { MenuComponent } from './menu/menu.component';
 import { HeroComponent } from './home/hero/hero.component';
 import { FeaturedItemsComponent } from './home/featured-items/featured-items.component';
+import { InvitationComponent } from './home/invitation/invitation.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FeaturedItemsComponent } from './home/featured-items/featured-items.com
     MenuComponent,
     HeroComponent,
     FeaturedItemsComponent,
+    InvitationComponent,
   ],
   imports: [
     BrowserModule,
