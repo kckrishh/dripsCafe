@@ -1,5 +1,6 @@
 <nav
-  class="relative max-w-screen h-[4rem] bg-nav flex justify-between z-[1000] lg:justify-around items-center"
+  class="fixed h-[4rem] top-0 left-0 w-full z-[1000] flex items-center justify-between transition-all duration-300"
+  [ngClass]="isScrolled ? 'bg-red-50 shadow-lg' : 'bg-transparent'"
 >
   <img
     src="logo.avif"
@@ -7,19 +8,39 @@
     srcset=""
     class="w-[4rem] rounded-full ml-[1rem]"
   />
-  <menu class="w-[60%] hidden md:flex justify-between text-xl lg:text-2xl">
-    <a routerLink="/" class="text-text-nav-default hover:text-text-nav-hover"
+  <menu
+    class="w-[60%] pr-10 hidden md:flex justify-between text-xl lg:text-2xl"
+  >
+    <a
+      routerLink="/"
+      class="hover:text-text-nav-hover"
+      [class]="
+        isScrolled ? 'text-text-nav-default' : 'text-white drop-shadow-lg'
+      "
       >Home</a
     >
     <a
       routerLink="/menu"
-      class="text-text-nav-default hover:text-text-nav-hover"
+      class="hover:text-text-nav-hover"
+      [class]="
+        isScrolled ? 'text-text-nav-default' : 'text-white drop-shadow-lg'
+      "
       >Menu</a
     >
-    <a routerLink="/" class="text-text-nav-default hover:text-text-nav-hover"
+    <a
+      routerLink="/"
+      class="hover:text-text-nav-hover"
+      [class]="
+        isScrolled ? 'text-text-nav-default' : 'text-white drop-shadow-lg'
+      "
       >About Us</a
     >
-    <a routerLink="/" class="text-text-nav-default hover:text-text-nav-hover"
+    <a
+      routerLink="/"
+      class="text-text-nav-default hover:text-text-nav-hover"
+      [class]="
+        isScrolled ? 'text-text-nav-default' : 'text-white drop-shadow-lg'
+      "
       >Contact Us</a
     >
   </menu>
@@ -31,20 +52,22 @@
         (click)="isOpen = !isOpen"
       >
         <span
-          class="block w-full h-[1.8px] bg-black rounded transition-transform transform"
-          [class.rotate-45]="isOpen"
-          [class.translate-y-1]="isOpen"
-          [class.w-8]="isOpen"
+          class="block w-full rounded transition-transform transform"
+          [ngClass]="{
+            'rotate-45 bg-black translate-y-1 w-[4rem]': isOpen,
+            'bg-white w-full h-[1.8px]': !isOpen
+          }"
         ></span>
         <span
-          class="block w-full h-[2px] bg-black rounded transition-opacity"
+          class="block w-full h-[2px] bg-white rounded transition-opacity"
           [class.opacity-0]="isOpen"
         ></span>
         <span
-          class="block w-full h-[2px] bg-black rounded transition-transform transform"
-          [class.-rotate-45]="isOpen"
-          [class.-translate-y-5]="isOpen"
-          [class.w-8]="isOpen"
+          class="block w-full h-[2px] rounded transition-transform transform"
+          [ngClass]="{
+            '-rotate-45 bg-black translate-y-1': isOpen,
+            'bg-white': !isOpen
+          }"
         ></span>
       </button>
 
@@ -52,6 +75,7 @@
       <div
         class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300"
         [class.translate-x-0]="isOpen"
+        [class.bg-black]="isOpen"
         [class.translate-x-full]="!isOpen"
       >
         <menu class="flex flex-col items-center mt-[4rem] p-4 space-y-4">
