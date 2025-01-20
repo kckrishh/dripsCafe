@@ -16,6 +16,7 @@ import { FeaturedItemsComponent } from './home/featured-items/featured-items.com
 import { InvitationComponent } from './home/invitation/invitation.component';
 import { HomeMenuComponent } from './home/home-menu/home-menu.component';
 import { FeatureComponent } from './home/feature/feature.component';
+import { WokringHoursComponent } from './home/wokring-hours/wokring-hours.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FeatureComponent } from './home/feature/feature.component';
     InvitationComponent,
     HomeMenuComponent,
     FeatureComponent,
+    WokringHoursComponent,
   ],
   imports: [
     BrowserModule,

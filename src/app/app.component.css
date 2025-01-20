@@ -7,4 +7,5 @@ main {
   background-attachment: fixed; /* Makes the background fixed during scrolling */
   background-position: center; /* Centers the image */
   min-height: 200vh;
+  z-index: -10000;
 }
