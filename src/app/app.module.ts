@@ -17,6 +17,7 @@ import { InvitationComponent } from './home/invitation/invitation.component';
 import { HomeMenuComponent } from './home/home-menu/home-menu.component';
 import { FeatureComponent } from './home/feature/feature.component';
 import { WokringHoursComponent } from './home/wokring-hours/wokring-hours.component';
+import { ReviewsComponent } from './home/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { WokringHoursComponent } from './home/wokring-hours/wokring-hours.compon
     HomeMenuComponent,
     FeatureComponent,
     WokringHoursComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,
