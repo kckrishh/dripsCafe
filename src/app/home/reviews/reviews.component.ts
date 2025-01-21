@@ -91,12 +91,17 @@ export class ReviewsComponent {
 
   currentSlide = 0;
 
+  get transform() {
+    return `translateX(-${this.currentSlide * 100}%)`;
+  }
+
   prevSlide() {
     this.currentSlide =
       this.currentSlide > 0 ? this.currentSlide - 1 : this.reviews.length - 1;
   }
 
   nextSlide() {
+    console.log(this.currentSlide);
     this.currentSlide =
       this.currentSlide < this.reviews.length - 1 ? this.currentSlide + 1 : 0;
   }
