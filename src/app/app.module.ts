@@ -19,6 +19,7 @@ import { FeatureComponent } from './home/feature/feature.component';
 import { WokringHoursComponent } from './home/wokring-hours/wokring-hours.component';
 import { ReviewsComponent } from './home/reviews/reviews.component';
 import { GalleryComponent } from './home/gallery/gallery.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { GalleryComponent } from './home/gallery/gallery.component';
     WokringHoursComponent,
     ReviewsComponent,
     GalleryComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
