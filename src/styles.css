@@ -8,5 +8,11 @@
   font-family: "Quintessential", serif;
 }
 
-body {
+html {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

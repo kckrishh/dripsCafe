@@ -1,0 +1,59 @@
+<section class="py-6 mt-5 relative">
+  <!-- Section Title -->
+  <div class="flex items-center space-x-2 ml-[1.5rem]">
+    <div class="text-pink-300 text-[4rem]">~</div>
+    <h3 class="text-text-header font-medium text-xl">Gallery</h3>
+  </div>
+
+  <h1
+    class="text-text-header ml-[1.5rem] text-3xl font-semibold mt-[-1.5rem] mb-6 pb-1"
+  >
+    Explore Our Stunning Movements
+  </h1>
+
+  <!-- Bright Overlay -->
+  <div
+    *ngIf="isOpen"
+    class="fixed inset-0 bg-white bg-opacity-90 z-[1000] flex items-center justify-center"
+  >
+    <div class="relative">
+      <!-- Close Button -->
+      <button
+        class="absolute top-2 right-2 bg-gray-800 text-white px-4 py-2 rounded shadow-md hover:bg-gray-700 z-[1100]"
+        (click)="toggleOverlay()"
+      >
+        Close
+      </button>
+
+      <!-- Lightbox Image -->
+      <img
+        [src]="'gallery/' + selectedImage + '.avif'"
+        alt="Selected Image"
+        class="max-w-[90vw] max-h-[90vh] object-contain rounded shadow-lg"
+      />
+    </div>
+  </div>
+
+  <!-- Gallery Container -->
+  <div class="grid grid-cols-2 gap-3 px-3">
+    <div
+      *ngFor="let img of images"
+      class="relative group border border-pink-200 rounded-md shadow-md hover:shadow-lg"
+      (click)="toggleOverlay(img)"
+    >
+      <div class="aspect-w-1 h-[15rem] w-full">
+        <img
+          [src]="'gallery/' + img + '.avif'"
+          class="w-full h-full object-cover rounded-md"
+        />
+      </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-pink-700/60 via-pink-600/30 to-transparent opacity-0 group-hover:opacity-100 flex items-end justify-center rounded-md transition p-2"
+      >
+        <p class="text-white text-xs font-medium">
+          Beautiful Scenery #{{ img }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

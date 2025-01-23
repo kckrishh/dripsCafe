@@ -24,13 +24,13 @@
   <div>
     <section class="relative w-[100vw]">
       <button
-        class="absolute left-2 top-24 text-3xl text-red-300 font-extrabold hover:bg-pink-200 p-2 rounded-full z-[10000000]"
+        class="absolute left-2 top-24 text-3xl text-red-300 font-extrabold hover:bg-pink-200 p-2 rounded-full z-[10]"
         (click)="prevSlide()"
       >
         <
       </button>
       <button
-        class="absolute right-2 top-24 text-3xl font-extrabold text-red-300 p-2 hover:bg-pink-200 rounded-full z-[100000000]"
+        class="absolute right-2 top-24 text-3xl font-extrabold text-red-300 p-2 hover:bg-pink-200 rounded-full z-[10]"
         (click)="nextSlide()"
       >
         >
@@ -53,7 +53,7 @@
             <img [src]="review.image" alt="" class="w-full h-auto rounded-md" />
             <section>
               <p class="text-sm font-medium">{{ review.name }}</p>
-              <p class="text-xs text-gray-500">{{ review.date }}</p>
+              <p class="text-xs text-gray-500 pb-3">{{ review.date }}</p>
             </section>
           </div>
         </article>

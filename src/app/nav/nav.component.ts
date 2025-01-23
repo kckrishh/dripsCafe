@@ -9,6 +9,17 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class NavComponent {
   isOpen = false;
 
+  toggleScroll(): void {
+    this.isOpen = !this.isOpen;
+    if (this.isOpen) {
+      document.body.classList.add('no-scroll');
+      this.isOpen = true;
+    } else {
+      document.body.classList.remove('no-scroll');
+      this.isOpen = false;
+    }
+  }
+
   isScrolled = false;
   @HostListener('window:scroll', [])
   onWindowScroll(): void {

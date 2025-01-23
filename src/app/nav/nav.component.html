@@ -1,7 +1,11 @@
 <nav
-  class="fixed h-[4rem] top-0 left-0 w-full z-[1000] flex items-center justify-between transition-all duration-300"
-  [ngClass]="isScrolled ? 'bg-red-50 shadow-lg' : 'bg-transparent'"
+  class="fixed h-[4rem] top-0 left-0 w-full z-[100000] flex items-center justify-between transition-all duration-300"
+  [ngClass]="isScrolled ? 'bg-pink-50 shadow-lg' : 'bg-transparent'"
 >
+  <div
+    *ngIf="isOpen"
+    class="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-[10]"
+  ></div>
   <img
     src="logo.avif"
     alt=""
@@ -48,32 +52,29 @@
     <div class="relative">
       <!-- Hamburger Menu Button -->
       <button
-        class="flex flex-col justify-between items-center w-6 h-6 z-50 relative"
-        (click)="isOpen = !isOpen"
+        class="flex flex-col justify-between items-center w-8 h-8 relative z-[1000000000]"
+        (click)="toggleScroll()"
       >
+        <!-- Top Bar -->
         <span
-          class="block w-full rounded transition-transform transform"
-          [ngClass]="{
-            'rotate-45 bg-black translate-y-1 w-[4rem]': isOpen,
-            'bg-white w-full h-[1.8px]': !isOpen
-          }"
+          class="block w-full h-[2px] bg-white rounded transition-transform transform"
+          [ngClass]="{ 'rotate-45 w-[46px] translate-y-2 bg-black': isOpen }"
         ></span>
+        <!-- Middle Bar -->
         <span
           class="block w-full h-[2px] bg-white rounded transition-opacity"
-          [class.opacity-0]="isOpen"
+          [ngClass]="{ 'opacity-0': isOpen }"
         ></span>
+        <!-- Bottom Bar -->
         <span
-          class="block w-full h-[2px] rounded transition-transform transform"
-          [ngClass]="{
-            '-rotate-45 bg-black translate-y-1': isOpen,
-            'bg-white': !isOpen
-          }"
+          class="block w-full h-[2px] bg-white rounded transition-transform transform"
+          [ngClass]="{ '-rotate-45 w-[46px] -translate-y-2 bg-black': isOpen }"
         ></span>
       </button>
 
       <!-- Sidebar Menu -->
       <div
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300"
+        class="fixed top-0 z-[100000000] right-0 h-full w-64 bg-pink-100 shadow-lg transform transition-transform duration-300"
         [class.translate-x-0]="isOpen"
         [class.bg-black]="isOpen"
         [class.translate-x-full]="!isOpen"

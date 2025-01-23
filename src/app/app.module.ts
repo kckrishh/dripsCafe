@@ -18,6 +18,7 @@ import { HomeMenuComponent } from './home/home-menu/home-menu.component';
 import { FeatureComponent } from './home/feature/feature.component';
 import { WokringHoursComponent } from './home/wokring-hours/wokring-hours.component';
 import { ReviewsComponent } from './home/reviews/reviews.component';
+import { GalleryComponent } from './home/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ReviewsComponent } from './home/reviews/reviews.component';
     FeatureComponent,
     WokringHoursComponent,
     ReviewsComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
